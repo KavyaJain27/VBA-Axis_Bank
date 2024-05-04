@@ -1,7 +1,7 @@
 # VBA-Axis_Bank
-Sub Macro_Axis_Statement()
+    Sub Macro_Axis_Statement()
 
-'Data From PDF
+    'Data From PDF
 
     ActiveWorkbook.Queries.Add Name:="Table005 (Page 2)", Formula:= _
         "let" & Chr(13) & "" & Chr(10) & "    Source = Pdf.Tables(File.Contents(""C:\Users\KAVYA JAIN\Documents\Kavita Mam Project\AXIS BANK  Statement for September 2023-unlocked.pdf""), [Implementation=""1.3""])," & Chr(13) & "" & Chr(10) & "    Table005 = Source{[Id=""Table005""]}[Data]," & Chr(13) & "" & Chr(10) & "    #""Promoted Headers"" = Table.PromoteHeaders(Table005, [PromoteAllScalars=true])," & Chr(13) & "" & Chr(10) & "    #""Changed Type"" = Table.TransformColumnTypes(#""Promoted Headers""" & _
@@ -76,64 +76,60 @@ Sub Macro_Axis_Statement()
         .Refresh
     End With
     
-'Formating
-
-Worksheets("sheet1").Move Before:=Worksheets("sheet5")
-Worksheets("sheet3").Move Before:=Worksheets("sheet5")
-Worksheets("sheet4").Move Before:=Worksheets("sheet5")
-Worksheets("sheet2").Move Before:=Worksheets("sheet3")
-
-ActiveSheet.Next.Select
-Range("a1").Select
-ActiveCell.Formula2R1C1 = "Txn Date"
-Range("b1").Select
-ActiveCell.Formula2R1C1 = "Transaction"
-Range("c1").Select
-ActiveCell.Formula2R1C1 = "Withdrawals"
-Range("d1").Select
-ActiveCell.Formula2R1C1 = "Deposits"
-Range("e1").Select
-ActiveCell.Formula2R1C1 = "Balance"
-Range("f1").Select
-ActiveCell.Formula2R1C1 = "Other Information"
-
-ActiveSheet.Next.Select
-Range("a1").Select
-ActiveCell.Formula2R1C1 = "Txn Date"
-Range("b1").Select
-ActiveCell.Formula2R1C1 = "Transaction"
-Range("c1").Select
-ActiveCell.Formula2R1C1 = "Withdrawals"
-Range("d1").Select
-ActiveCell.Formula2R1C1 = "Deposits"
-Range("e1").Select
-ActiveCell.Formula2R1C1 = "Balance"
-Range("f1").Select
-ActiveCell.Formula2R1C1 = "Other Information"
-
-ActiveSheet.Next.Select
-Range("a1").Select
-ActiveCell.Formula2R1C1 = "Txn Date"
-Range("b1").Select
-ActiveCell.Formula2R1C1 = "Transaction"
-Range("c1").Select
-ActiveCell.Formula2R1C1 = "Withdrawals"
-Range("d1").Select
-ActiveCell.Formula2R1C1 = "Deposits"
-Range("e1").Select
-ActiveCell.Formula2R1C1 = "Balance"
-Range("f1").Select
-ActiveCell.Formula2R1C1 = "Other Information"
-
-Worksheets("sheet1").Select
-
-'Output
-
-outputfolder = "C:\Users\KAVYA JAIN\Documents"
-Workbooks("Axis_Statement").SaveAs Filename:=outputfolder & "\" & "Axis Statement Done.xlsm", FileFormat:=52
-MsgBox "Done", vbApplicationModal + vbInformation
-
-End Sub
+    'Formatting
+    Worksheets("sheet1").Move Before:=Worksheets("sheet5")
+    Worksheets("sheet3").Move Before:=Worksheets("sheet5")
+    Worksheets("sheet4").Move Before:=Worksheets("sheet5")
+    Worksheets("sheet2").Move Before:=Worksheets("sheet3")
+    
+    ActiveSheet.Next.Select
+    Range("a1").Select
+    ActiveCell.Formula2R1C1 = "Txn Date"
+    Range("b1").Select
+    ActiveCell.Formula2R1C1 = "Transaction"
+    Range("c1").Select
+    ActiveCell.Formula2R1C1 = "Withdrawals"
+    Range("d1").Select
+    ActiveCell.Formula2R1C1 = "Deposits"
+    Range("e1").Select
+    ActiveCell.Formula2R1C1 = "Balance"
+    Range("f1").Select
+    ActiveCell.Formula2R1C1 = "Other Information"
+    ActiveSheet.Next.Select
+    Range("a1").Select
+    ActiveCell.Formula2R1C1 = "Txn Date"
+    Range("b1").Select
+    ActiveCell.Formula2R1C1 = "Transaction"
+    Range("c1").Select
+    ActiveCell.Formula2R1C1 = "Withdrawals"
+    Range("d1").Select
+    ActiveCell.Formula2R1C1 = "Deposits"
+    Range("e1").Select
+    ActiveCell.Formula2R1C1 = "Balance"
+    Range("f1").Select
+    ActiveCell.Formula2R1C1 = "Other Information"
+    
+    ActiveSheet.Next.Select
+    Range("a1").Select
+    ActiveCell.Formula2R1C1 = "Txn Date"
+    Range("b1").Select
+    ActiveCell.Formula2R1C1 = "Transaction"
+    Range("c1").Select
+    ActiveCell.Formula2R1C1 = "Withdrawals"
+    Range("d1").Select
+    ActiveCell.Formula2R1C1 = "Deposits"
+    Range("e1").Select
+    ActiveCell.Formula2R1C1 = "Balance"
+    Range("f1").Select
+    ActiveCell.Formula2R1C1 = "Other Information"
+    Worksheets("sheet1").Select\
+    
+    'Output
+    outputfolder = "C:\Users\KAVYA JAIN\Documents"
+    Workbooks("Axis_Statement").SaveAs Filename:=outputfolder & "\" & "Axis Statement Done.xlsm", FileFormat:=52
+    MsgBox "Done", vbApplicationModal + vbInformation
+    
+    End Sub
 
 
 
